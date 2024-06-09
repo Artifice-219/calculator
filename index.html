@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Gingeneer's Calculator</h1>
+    <div class="cal-wrapper">
+      <div class="cal-screen">
+        <textarea name="cal-display" id="cal-display" readonly></textarea>
+      </div>
+      <div class="cal-buttons">
+        <button class="button" value="7">7</button>
+        <button class="button" value="8">8</button>
+        <button class="button" value="9">9</button>
+        <button class="button" value="-">-</button>
+        <br />
+        <button class="button" value="4">4</button>
+        <button class="button" value="5">5</button>
+        <button class="button" value="6">6</button>
+        <button class="button" value="+">+</button>
+        <br />
+        <button class="button" value="1">1</button>
+        <button class="button" value="2">2</button>
+        <button class="button" value="3">3</button>
+        <br />
+        <button class="button" value="/">%</button>
+        <button class="button" value="0">0</button>
+        <button class="button" value=".">.</button>
+        <br />
+        <button class="op_btn" id="clear">C</button>
+        <button class="op_btn" id="eq_btn" onclick="evaluate()">=</button>
+      </div>
+    </div>
+
+    <!-- jquery for the C button -->
+    <script>
+      $(document).ready(function () {
+        $("#clear").click(function () {
+          $("#cal-display").html("");
+        });
+      });
+    </script>
+    <!-- jquery for the buttons -->
+    <script>
+      $(document).ready(function () {
+        $(".button").click(function () {
+          let value = $(this).val();
+
+          $("#cal-display").append(value);
+        });
+      });
+    </script>
+    <!-- jquery for the equal sign -->
+    <script>
+      $(document).ready(function () {
+        $("#eq_btn").click(function () {
+          let expression = $("#cal-display").val();
+
+          let expr_result = eval(expression);
+
+          $("#cal-display").append(" = " + expr_result);
+        });
+      });
+    </script>
+  </body>
+</html>
