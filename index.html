@@ -3,34 +3,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
   </head>
   <body>
-    <h1>Gingeneer's Calculator</h1>
     <div class="cal-wrapper">
       <div class="cal-screen">
-        <textarea name="cal-display" id="cal-display" readonly></textarea>
+        <textarea name="cal-display" id="cal-display" readonly placeholder="Gingeneer's Calculator"></textarea>
       </div>
       <div class="cal-buttons">
+        <button class="op_btn" id="clear">C</button>
+        <button class="button" value="">DEL</button>
+        <button class="button" value="%">%</button>
+        <button class="button" value="/">/</button>
         <button class="button" value="7">7</button>
         <button class="button" value="8">8</button>
         <button class="button" value="9">9</button>
-        <button class="button" value="-">-</button>
-        <br />
+        <button class="button" value="*">*</button>
+
         <button class="button" value="4">4</button>
-        <button class="button" value="5">5</button>
+        <button class="button" value="2">5</button>
         <button class="button" value="6">6</button>
-        <button class="button" value="+">+</button>
-        <br />
+
+        <button class="button" value="-">-</button>
         <button class="button" value="1">1</button>
         <button class="button" value="2">2</button>
         <button class="button" value="3">3</button>
-        <br />
-        <button class="button" value="/">%</button>
-        <button class="button" value="0">0</button>
+        <button class="button" value="+">+</button>
         <button class="button" value=".">.</button>
-        <br />
-        <button class="op_btn" id="clear">C</button>
+        <button class="button" value="0">0</button>
+
         <button class="op_btn" id="eq_btn" onclick="evaluate()">=</button>
       </div>
     </div>
@@ -64,6 +66,28 @@
           $("#cal-display").append(" = " + expr_result);
         });
       });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+      let placeholders = [
+        "Miss you idol",
+        "Password ka ba ?; di kasi kita makalimutan e",
+        "May mapa ka? Kasi naligaw ako sa mata mo",
+        "Crush kita, period",
+        "Para kang wifi, connected ako sa'yo.",
+       " Pwede bang humiram ng kiss? Babalik ko rin agad.",
+       "May lahi ka bang keyboard? Kasi type kita",
+       "Institute of Gingeneering"
+        
+      ];
+      let index = 0;
+      
+      setInterval(function () {
+        index = (index + 1) % placeholders.length;
+        $("#cal-display").attr("placeholder", placeholders[index]);
+      }, 4000); 
+    });
     </script>
   </body>
 </html>
