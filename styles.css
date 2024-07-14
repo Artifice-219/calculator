@@ -1,18 +1,19 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #efbdeb;
+    background-color: #FFC4EB;
   }
 
   
   .cal-wrapper {
     margin: 20px auto;
     padding: 45px;
-    background-color: #edf7d2;
+    background-color: #FFE4FA;
     border: 1px solid #ccc;
     border-radius: 20px;
     height: 80%;
     max-width: 300px;
     box-shadow: 20px 3px  7px rgba(0, 0, 0, 0.2); /* Apply shadow */
+
   }
   
   .cal-screen textarea {
@@ -92,13 +93,13 @@ body {
   @media only screen and (max-width: 480px){
     body {
         font-family: Arial, sans-serif;
-        background-color: #efbdeb;
+        background-color: #FFC4EB;
       }
       
       .cal-wrapper {
     margin: 20px auto;
     padding: 40px;
-    background-color: #edf7d2;
+    background-color: #FFE4FA;
     border: 1px solid #ccc;
     border-radius: 20px;
     height: 78%;
